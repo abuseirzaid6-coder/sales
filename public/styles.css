@@ -155,7 +155,7 @@ input[aria-invalid="true"]:focus-visible { box-shadow: 0 0 0 3px color-mix(in sr
 }
 .step-btn:first-child { border-radius: 10px 0 0 10px; border-right: 0; }
 .step-btn:last-child { border-radius: 0 10px 10px 0; border-left: 0; }
-.step-btn:hover { background: var(--border); }
+@media (hover: hover) { .step-btn:hover { background: var(--border); } }
 
 .candidates { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
 .candidate {
@@ -212,7 +212,8 @@ input[aria-invalid="true"]:focus-visible { box-shadow: 0 0 0 3px color-mix(in sr
   text-decoration: none;
   transition: background .15s;
 }
-.btn-primary:hover { background: var(--brand-hover); }
+@media (hover: hover) { .btn-primary:hover { background: var(--brand-hover); } }
+.btn-primary:active { background: var(--brand-hover); }
 .btn-primary:disabled { opacity: .7; cursor: progress; }
 .secure-note { color: var(--muted); font-size: 13px; text-align: center; margin: 10px 0 0; }
 
