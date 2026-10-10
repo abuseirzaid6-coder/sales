@@ -1,6 +1,7 @@
-/* Brand colors are taken from the logo's gradient (#0084ff → #00299a). */
+/* Brand colors are taken from the logo's gradient (#0084ff → #00299a).
+   The site is always light, whatever the device's dark-mode setting. */
 :root {
-  color-scheme: light;
+  color-scheme: only light;
   --brand-top: #0084ff;
   --brand-bottom: #00299a;
   --brand: #0057d9;
@@ -21,47 +22,6 @@
   --notice-bg: #e8f1ff;
   --shadow: 0 1px 2px rgba(15, 23, 42, .05), 0 8px 24px rgba(15, 23, 42, .06);
   --radius: 14px;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    color-scheme: dark;
-    --brand: #3d8bff;
-    --brand-hover: #63a2ff;
-    --bg: #0b1020;
-    --surface: #131a2c;
-    --surface-2: #182036;
-    --text: #e8ecf5;
-    --muted: #9aa4b8;
-    --border: #273250;
-    --error: #ff8a80;
-    --error-bg: #3a1618;
-    --ok: #5fd39a;
-    --ok-bg: #12301f;
-    --warn: #ffc95c;
-    --warn-bg: #352812;
-    --notice-bg: #142443;
-    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px rgba(0, 0, 0, .25);
-  }
-}
-:root[data-theme="dark"] {
-  color-scheme: dark;
-  --brand: #3d8bff;
-  --brand-hover: #63a2ff;
-  --bg: #0b1020;
-  --surface: #131a2c;
-  --surface-2: #182036;
-  --text: #e8ecf5;
-  --muted: #9aa4b8;
-  --border: #273250;
-  --error: #ff8a80;
-  --error-bg: #3a1618;
-  --ok: #5fd39a;
-  --ok-bg: #12301f;
-  --warn: #ffc95c;
-  --warn-bg: #352812;
-  --notice-bg: #142443;
-  --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px rgba(0, 0, 0, .25);
 }
 
 *, *::before, *::after { box-sizing: border-box; }
