@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Sales Course Enrollment</title>
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/styles.css">
+<script type="module" src="/app.js"></script>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/logo.png" alt="" width="34" height="35"><span>Sales Course Enrollment</span></a>
+  </div>
+</header>
+
+<main class="wrap">
+  <div id="notice" class="notice" role="status" hidden></div>
+
+  <h1>Enroll candidates</h1>
+  <p class="lede">Enter how many candidates you're enrolling, add each one's full name and age, then pay the certificate fee by card. Candidates must be at least 18.</p>
+
+  <form id="enroll-form" class="layout" novalidate>
+    <div class="stack">
+      <section class="card">
+        <label class="label" for="count">Number of candidates</label>
+        <div class="stepper">
+          <button type="button" class="step-btn" data-step="-1" aria-label="One fewer candidate">−</button>
+          <input id="count" name="count" type="number" inputmode="numeric" min="1" max="40" step="1" value="1" aria-describedby="count-hint">
+          <button type="button" class="step-btn" data-step="1" aria-label="One more candidate">+</button>
+        </div>
+        <p id="count-hint" class="hint">Up to <span data-max-candidates>40</span> candidates per payment.</p>
+      </section>
+
+      <section class="card" aria-labelledby="candidates-heading">
+        <h2 id="candidates-heading">Candidate details</h2>
+        <ol id="candidate-list" class="candidates"></ol>
+      </section>
+    </div>
+
+    <aside class="card summary" aria-labelledby="summary-heading">
+      <h2 id="summary-heading">Summary</h2>
+      <dl class="summary-rows">
+        <div><dt>Certificate fee</dt><dd><span data-fee></span> each</dd></div>
+        <div><dt>Candidates</dt><dd id="summary-count">1</dd></div>
+        <div class="summary-total"><dt>Total</dt><dd id="summary-total"></dd></div>
+      </dl>
+      <div id="form-error" class="form-error" role="alert" hidden></div>
+      <button id="submit" type="submit" class="btn-primary">Continue to payment</button>
+      <p class="secure-note">You'll pay on Stripe's secure checkout page.</p>
+    </aside>
+  </form>
+</main>
+
+<template id="candidate-row">
+  <li class="candidate">
+    <span class="candidate-num" aria-hidden="true"></span>
+    <div class="field field-name">
+      <label class="label"></label>
+      <input type="text" name="fullName" autocomplete="off" autocapitalize="words" spellcheck="false" maxlength="100">
+      <p class="field-error" hidden></p>
+    </div>
+    <div class="field field-age">
+      <label class="label"></label>
+      <input type="number" name="age" inputmode="numeric" min="18" max="120" step="1">
+      <p class="field-error" hidden></p>
+    </div>
+  </li>
+</template>
+</body>
+</html>

@@ -1,0 +1,20 @@
+{
+  "name": "sales-course-enrollment",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Admin site to enroll candidates in the Sales Course and pay the certificate fee with Stripe Checkout.",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "stripe": "^22.6.2"
+  }
+}
