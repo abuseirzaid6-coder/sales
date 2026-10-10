@@ -256,3 +256,5 @@ input[aria-invalid="true"]:focus-visible { box-shadow: 0 0 0 3px color-mix(in sr
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; }
 }
+
+.notice-warn { background: var(--warn-bg); border-left-color: var(--warn); }
